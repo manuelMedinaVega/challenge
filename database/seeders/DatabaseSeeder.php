@@ -67,5 +67,51 @@ class DatabaseSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]]);
+
+        DB::table('user_category')->insert([[
+            'user_id' => 1,
+            'category_id' => 1
+        ], [
+            'user_id' => 1,
+            'category_id' => 2
+        ], [
+            'user_id' => 1,
+            'category_id' => 3
+        ], [
+            'user_id' => 2,
+            'category_id' => 1
+        ], [
+            'user_id' => 3,
+            'category_id' => 3
+        ], [
+            'user_id' => 4,
+            'category_id' => 1,
+        ], [
+            'user_id' => 4,
+            'category_id' => 3
+        ]]);
+
+        DB::table('user_channel')->insert([[
+            'user_id' => 1,
+            'channel_id' => 1,
+        ], [
+            'user_id' => 1,
+            'channel_id' => 2,
+        ], [
+            'user_id' => 1,
+            'channel_id' => 3,
+        ], [
+            'user_id' => 2,
+            'channel_id' => 1,
+        ], [
+            'user_id' => 3,
+            'channel_id' => 3,
+        ], [
+            'user_id' => 4,
+            'channel_id' => 1,
+        ], [
+            'user_id' => 4,
+            'channel_id' => 3,
+        ]]);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\SubmissionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/submission', 'submission');
+Route::get('/submission', [SubmissionController::class, 'show']);
 
-Route::post('submission', function(Request $request) {
-    dd($request->category);
-});
+Route::post('submission', [SubmissionController::class, 'send']);
+
+Route::get('/history', [HistoryController::class, 'show']);
